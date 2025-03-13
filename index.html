@@ -18,6 +18,16 @@
             text-align: center;
             overflow: hidden;
         }
+        .logo {
+            width: 150px; /* Adjusted size */
+            height: 150px; /* Adjusted size */
+            margin-bottom: 20px;
+            animation: rotate3D 3s linear infinite;
+        }
+        @keyframes rotate3D {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
         .container {
             opacity: 0;
             animation: fadeIn 1.5s ease-in-out forwards;
