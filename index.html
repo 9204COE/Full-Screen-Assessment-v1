@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+    <link rel="preload" as="image" href="logo.png">
     <style>
         body {
             margin: 0;
@@ -38,6 +39,10 @@
         }
     </style>
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const logo = document.querySelector(".logo");
+            logo.src = logo.dataset.src;
+        });
         setTimeout(function() {
             window.location.href = "Home.html"; // Change to actual next page URL
         }, 10000);
@@ -45,7 +50,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="KCET Logo" class="logo"> <!-- Replace 'logo.png' with actual logo path -->
+        <img src="logo-small.png" data-src="logo.png" alt="KCET Logo" class="logo"> <!-- Lazy Loading Logo -->
         <h1>Welcome</h1>
         <h1>Kamaraj College of Engineering and Technology</h1>
         <h2>9204 - Controller of Examination Office</h2>
